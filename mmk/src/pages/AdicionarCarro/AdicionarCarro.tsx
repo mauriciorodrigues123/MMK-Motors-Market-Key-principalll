@@ -112,7 +112,6 @@ export function AdicionarCarro() {
         }
 
         const novoCarro: Carro = {
-            // id: Date.now(), // JSON Server gerará o ID automaticamente
             nome,
             tipo,
             precoTotal: parseFloat(precoTotal),
