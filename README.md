@@ -98,8 +98,8 @@ Projeto acadêmico desenvolvido com:
 
 ## Participantes
 
-*   Kauê Miguel Oliveira Silva
-*   Matheus Marques dos Santos
 *   Maurício Rodrigues bispo
 *   Maycon Douglas Cardoso da Silva
+*   Matheus Marques dos Santos
 *   Vinícius Júlio Saladini
+*   Kauê Miguel Oliveira Silva
