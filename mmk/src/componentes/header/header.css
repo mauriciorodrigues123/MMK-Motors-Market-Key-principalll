@@ -20,7 +20,8 @@
 
 /* Header sempre visível na página de carros e sobre */
 .pagina-modelos .header,
-.sobre-page .header {
+.sobre-page .header,
+.pagina-alugueis .header {
   background-color: #fafafa !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -29,13 +30,16 @@
 .pagina-modelos .nav a,
 .pagina-modelos .hamburger,
 .sobre-page .nav a,
-.sobre-page .hamburger {
+.sobre-page .hamburger,
+.pagina-alugueis .nav a,
+.pagina-alugueis .hamburger {
   color: var(--cor-preto-forte) !important;
 }
 
 /* Logo preta na página de carros e sobre */
 .pagina-modelos .logo,
-.sobre-page .logo {
+.sobre-page .logo,
+.pagina-alugueis .logo {
   color: var(--cor-preto-forte) !important;
 }
 
