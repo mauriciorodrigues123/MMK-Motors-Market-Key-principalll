@@ -1,0 +1,226 @@
+.sobre-page {
+    min-height: 100vh;
+    background-color: #fff;
+    padding-top: 80px;
+}
+
+/* Ajustes para menu mobile */
+@media (max-width: 768px) {
+    .sobre-page .hamburger {
+        color: var(--cor-preto-forte);
+    }
+
+    .sobre-page .hamburger.active {
+        color: white;
+        background-color: var(--cor-vermelho-forte);
+    }
+
+    .sobre-page .nav {
+        background: var(--cor-preto-forte);
+    }
+
+    .sobre-page .nav.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .sobre-page .nav a {
+        color: var(--cor-branco-cinza) !important;
+    }
+}
+
+.sobre-container {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.sobre-page header {
+    background-color: white !important;
+}
+
+.sobre-page header a {
+    color: black !important;
+}
+
+.sobre-page header svg {
+    color: black !important;
+}
+
+.banner-sobre {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/banner-sobre.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobre-header {
+    text-align: center;
+    color: #fff;
+    max-width: 700px;
+    padding: 0 1rem;
+}
+
+.sobre-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.sobre-header p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.historia-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.historia-imagem {
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.historia-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.historia-content h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.historia-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.missao-visao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.missao-card,
+.visao-card {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.card-imagem {
+    height: 180px;
+    margin: -2rem -2rem 1.5rem;
+    overflow: hidden;
+}
+
+.card-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.missao-card h2,
+.visao-card h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.missao-card p,
+.visao-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.sobre-valores {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.valor-item {
+    text-align: center;
+}
+
+.valor-item i {
+    font-size: 2rem;
+    color: #ff1e00;
+    margin-bottom: 1rem;
+}
+
+.valor-item h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.valor-item p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 968px) {
+
+    .historia-section,
+    .missao-visao {
+        grid-template-columns: 1fr;
+    }
+
+    .historia-imagem {
+        height: 250px;
+    }
+
+    .valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .sobre-header h1 {
+        font-size: 2rem;
+    }
+
+    .banner-sobre {
+        height: 250px;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .historia-content h2,
+    .missao-card h2,
+    .visao-card h2 {
+        font-size: 1.5rem;
+    }
+}

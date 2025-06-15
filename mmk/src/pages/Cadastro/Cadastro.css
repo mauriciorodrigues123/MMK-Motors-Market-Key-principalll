@@ -1,0 +1,137 @@
+.containerCadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.cartaoCadastro {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.tituloCadastro {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.formularioCadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.campoFormulario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.campoFormulario label {
+    color: #555;
+    font-weight: 500;
+}
+
+.campoFormulario input,
+.campoFormulario select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.campoFormulario input:focus,
+.campoFormulario select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.campo-senha-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo-senha-container:focus-within {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.campo-senha-container input {
+    flex-grow: 1;
+    border: none;
+    padding: 12px;
+    padding-right: 40px;
+    background-color: transparent;
+    outline: none;
+}
+
+.botao-mostrar-senha {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 1.1em;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.botao-mostrar-senha:hover {
+    color: #333;
+}
+
+.botaoCadastrar {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.botaoCadastrar:hover {
+    background-color: #c02a3a;
+}
+
+.textoLogin {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+}
+
+.linkLogin {
+    color: #c02a3a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.linkLogin:hover {
+    text-decoration: underline;
+}

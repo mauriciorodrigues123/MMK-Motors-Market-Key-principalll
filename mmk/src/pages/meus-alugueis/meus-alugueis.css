@@ -1,0 +1,268 @@
+/* Estilos gerais da página */
+.pagina-alugueis {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    /* Espaço para o header fixo */
+}
+
+.container-principal {
+    flex: 1;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+}
+
+.container-alugueis {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.titulo {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Estilos dos filtros */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filtro-botao {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: white;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filtro-botao:hover {
+    background-color: #f8f9fa;
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.filtro-botao.ativo {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+/* Estilos da lista de aluguéis */
+.lista-alugueis {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sem-alugueis {
+    text-align: center;
+    color: #666;
+    font-size: 1.1em;
+    padding: 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos do cartão de aluguel */
+.cartao-aluguel {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.aluguel-header {
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.status-badge.ativo {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-badge.concluido {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.status-badge.cancelado {
+    background-color: #dc3545;
+    color: white;
+}
+
+.data-pagamento {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.aluguel-conteudo {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.imagem-carro {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.info-aluguel {
+    flex: 1;
+}
+
+.nome-carro {
+    font-size: 1.3em;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.tipo-carro {
+    color: #666;
+    margin: 0 0 15px 0;
+}
+
+.periodo-aluguel {
+    margin-bottom: 15px;
+}
+
+.periodo-aluguel .data {
+    margin: 5px 0;
+    color: #555;
+}
+
+.valor-aluguel {
+    font-size: 1.1em;
+    color: #28a745;
+}
+
+.aluguel-acoes {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.botao-cancelar,
+.botao-remover-cancelado {
+    background-color: #dc3545;
+    /* Vermelho */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: 600;
+}
+
+.botao-cancelar:hover,
+.botao-remover-cancelado:hover {
+    background-color: #c02a3a;
+    /* Vermelho mais escuro no hover */
+}
+
+.botao-remover-cancelado {
+    background-color: #6c757d;
+    /* Cinza para indicar uma ação de arquivar/remover secundária */
+}
+
+.botao-remover-cancelado:hover {
+    background-color: #5a6268;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .pagina-alugueis {
+        padding-top: 80px;
+    }
+
+    .container-principal {
+        padding: 20px 15px;
+    }
+
+    .container-alugueis {
+        padding: 0 10px;
+    }
+
+    .filtros {
+        flex-wrap: wrap;
+    }
+
+    .filtro-botao {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .aluguel-conteudo {
+        flex-direction: column;
+    }
+
+    .imagem-carro {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .pagina-alugueis {
+        padding-top: 70px;
+    }
+
+    .container-principal {
+        padding: 15px 10px;
+    }
+
+    .titulo {
+        font-size: 1.5em;
+    }
+
+    .filtro-botao {
+        padding: 6px 12px;
+        font-size: 0.85em;
+    }
+
+    .aluguel-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .aluguel-conteudo {
+        padding: 15px;
+    }
+
+    .imagem-carro {
+        height: 180px;
+    }
+
+    .nome-carro {
+        font-size: 1.2em;
+    }
+
+    .valor-aluguel {
+        font-size: 1em;
+    }
+}

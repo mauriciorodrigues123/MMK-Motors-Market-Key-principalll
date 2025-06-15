@@ -1,0 +1,1016 @@
+/* Adicionado box-sizing global */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    /* Garante que html e body ocupem 100% da altura da viewport */
+}
+
+.pagina-modelos {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    /* Espaço para o header fixo */
+}
+
+.container-principal {
+    flex: 1;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+}
+
+/* Removendo estilos redundantes do header */
+.pagina-modelos header,
+.pagina-modelos .header-container {
+    background-color: var(--cor-preto-forte) !important;
+}
+
+.container-modelos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+.titulo {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Estilos do cabeçalho de carros e barra de busca */
+.carros-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    padding: 20px 0;
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar {
+    flex-grow: 0;
+    max-width: 600px;
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 12px;
+    padding-left: 28px;
+    border: 1px solid #c0c0c0;
+    border-radius: 10px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 0.8em;
+}
+
+.no-results {
+    text-align: center;
+    color: #666;
+    font-size: 1.2em;
+    padding: 50px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    grid-column: 1 / -1;
+}
+
+.lista-carros {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.cartao-carro {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.cartao-carro:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.carro-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+    flex-wrap: nowrap;
+}
+
+.imagem-carro {
+    width: 55px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.info-carro {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0;
+    overflow: hidden;
+    min-width: 0;
+    text-align: left;
+}
+
+.nome-carro {
+    font-size: 0.85em;
+    color: #2c3e50;
+    margin: 0 0 1px;
+    font-weight: 700;
+}
+
+.tipo-carro {
+    color: #7f8c8d;
+    margin: 0;
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+.especificacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 5px;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.especificacao-item {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 1em;
+    color: #555;
+    min-width: 0;
+}
+
+.especificacao-item .icone {
+    font-size: 1em;
+    color: #dc3545;
+    flex-shrink: 0;
+}
+
+.especificacao-texto {
+    font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+
+.preco-selecionar {
+    padding: 8px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    gap: 8px;
+}
+
+.precos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.preco-total {
+    font-size: 1em;
+    font-weight: bold;
+    color: #dc3545;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.texto-total {
+    font-size: 0.55em;
+    color: #7f8c8d;
+}
+
+.botao-selecionar {
+    flex-shrink: 0;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7em;
+}
+
+.botao-selecionar:hover {
+    background-color: #c02a3a;
+    transform: translateY(-1px);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    /* Garantir que o overlay ocupe toda a altura da viewport */
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-conteudo {
+    background-color: #f8f9fa;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.botao-fechar {
+    position: absolute;
+    /* Voltar para absolute para fixar dentro do modal-conteudo */
+    right: 20px;
+    top: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    z-index: 1001;
+}
+
+/* Estilos das Etapas */
+.etapas-progresso {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 16px 16px 0 0;
+    border-bottom: 1px solid #eee;
+}
+
+.etapa {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 16px;
+    position: relative;
+}
+
+.etapa.ativa {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* Estilos dos Campos */
+.etapa-conteudo {
+    padding: 30px;
+    background-color: white;
+}
+
+.etapa-conteudo h3 {
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 22px;
+    text-align: center;
+}
+
+.grupo-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.campo-grupo {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.campo-grupo h4 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 18px;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+}
+
+.campo input[type="date"],
+.campo input[type="range"],
+.campo select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Estilos da Barra de Quilometragem */
+.campo input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #e0e0e0;
+    outline: none;
+    margin: 15px 0;
+}
+
+.campo input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #dc3545;
+    cursor: pointer;
+    margin-top: -6px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.campo input[type="range"]::-webkit-slider-thumb:hover {
+    background: #dc3545;
+}
+
+.campo input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #dc3545;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.campo input[type="range"]::-moz-range-thumb:hover {
+    background: #dc3545;
+}
+
+.km-valor {
+    text-align: center;
+    font-size: 1.1em;
+    color: #333;
+    margin-top: 5px;
+}
+
+.info-km {
+    margin-top: 20px;
+    background-color: #e7f4ff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #cceeff;
+}
+
+.info-km p {
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.aviso-km {
+    color: #dc3545 !important;
+    font-weight: bold;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 30px;
+    background-color: white;
+    border-radius: 0 0 16px 16px;
+    gap: 15px;
+}
+
+.botao-voltar,
+.botao-avancar,
+.botao-finalizar {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botao-voltar {
+    background-color: #6c757d;
+    color: white;
+}
+
+.botao-avancar {
+    background-color: #dc3545;
+    color: white;
+}
+
+.botao-finalizar {
+    background-color: #28a745;
+    color: white;
+}
+
+.botao-voltar:hover {
+    background-color: #5a6268;
+}
+
+.botao-avancar:hover {
+    background-color: #f30b22;
+}
+
+.botao-finalizar:hover {
+    background-color: #218838;
+}
+
+strong {
+    border-color: #dc3545;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .modal-conteudo {
+        width: 95%;
+        max-width: 600px;
+    }
+
+    .etapas-progresso {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .campo-grupo {
+        padding: 15px;
+    }
+
+    .modal-footer {
+        padding: 15px 20px;
+    }
+
+    .botao-voltar,
+    .botao-avancar,
+    .botao-finalizar {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .carros-header {
+        padding: 15px;
+        margin-bottom: 30px;
+        gap: 15px;
+    }
+
+    .search-input {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+
+    .titulo {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .container-modelos {
+        padding: 15px;
+    }
+
+    .no-results {
+        padding: 30px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagina-modelos {
+        padding-top: 70px;
+    }
+
+    .container-principal {
+        padding: 15px 10px;
+    }
+
+    .modal-overlay {
+        align-items: center;
+        /* Manter centralizado sem !important */
+    }
+
+    .modal-conteudo {
+        max-height: 75vh;
+    }
+
+    .botao-fechar {
+        font-size: 18px;
+        position: absolute;
+        /* Garantir absolute na media query */
+        top: 20px;
+    }
+
+    .etapas-progresso {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .etapa {
+        font-size: 12px;
+    }
+
+    .campo-grupo {
+        padding: 8px;
+    }
+
+    .campo label {
+        font-size: 12px;
+    }
+
+    .info-km p {
+        font-size: 0.75em;
+    }
+
+    .valor-total {
+        font-size: 1.2em;
+    }
+
+    .botao-voltar,
+    .botao-avancar,
+    .botao-finalizar {
+        padding: 5px 10px;
+        font-size: 0.75em;
+    }
+
+    .carros-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-bar {
+        max-width: 100%;
+    }
+
+    .search-input {
+        padding: 10px 12px;
+        padding-left: 20px;
+        /* Ajustar padding para acomodar o ícone */
+        font-size: 0.9em;
+    }
+
+    .search-icon {
+        left: 5px;
+        /* Ajustar posição do ícone mais para a esquerda */
+        font-size: 0.6em;
+        /* Reduzir ainda mais o tamanho do ícone */
+    }
+
+    .titulo {
+        font-size: 0.9em;
+        /* Diminuir o tamanho do título */
+        margin-bottom: 25px;
+    }
+
+    .lista-carros {
+        grid-template-columns: 1fr;
+    }
+
+    .cartao-carro {
+        margin-bottom: 15px;
+    }
+
+    .carro-flex,
+    .preco-selecionar {
+        padding: 4px;
+        /* Reduzir padding dos containers */
+    }
+
+    .imagem-carro {
+        height: 150px;
+        /* Reduzir altura da imagem */
+    }
+
+    .nome-carro {
+        font-size: 0.65em;
+        /* Reduzir tamanho da fonte */
+    }
+
+    .tipo-carro {
+        font-size: 0.5em;
+        /* Reduzir tamanho da fonte */
+    }
+
+    .especificacoes {
+        grid-template-columns: 1fr;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .especificacao-item {
+        justify-content: center;
+    }
+
+    .especificacao-texto {
+        font-size: 0.65em;
+        max-width: 100%;
+    }
+
+    .preco-total {
+        font-size: 0.7em;
+        /* Diminuir a fonte do preço */
+    }
+
+    .texto-total {
+        font-size: 0.55em;
+        /* Diminuir a fonte do 'por mês' */
+    }
+
+    .botao-selecionar {
+        padding: 6px 12px;
+        /* Reduzir padding do botão */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .lista-carros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal-conteudo {
+        max-width: 700px;
+    }
+
+    .campo-grupo {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .campo-grupo .campo {
+        width: calc(50% - 15px);
+    }
+}
+
+.botao-novo-carro {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.botao-novo-carro:hover {
+    background-color: #218838;
+}
+
+.resumo-locacao {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resumo-locacao h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.resumo-carro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eee;
+}
+
+.resumo-carro img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.info-resumo {
+    flex: 1;
+}
+
+.info-resumo h4 {
+    font-size: 1.3em;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.info-resumo p {
+    color: #666;
+    margin: 0;
+}
+
+.resumo-periodo {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eee;
+}
+
+.resumo-periodo h4 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.periodo-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.periodo-info div {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.periodo-info strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #dc3545;
+    font-size: 1em;
+}
+
+.periodo-info p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 5px 0;
+}
+
+.resumo-km {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eee;
+}
+
+.resumo-km h4 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.resumo-km ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resumo-km li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1em;
+}
+
+.resumo-km li:last-child {
+    margin-bottom: 0;
+}
+
+.resumo-valor {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.resumo-valor h4 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.valor-total {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 5px;
+}
+
+.valor-mensal {
+    font-size: 1em;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .resumo-locacao {
+        padding: 20px;
+    }
+
+    .resumo-carro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .resumo-carro img {
+        width: 100%;
+        height: 150px;
+    }
+
+    .periodo-info {
+        grid-template-columns: 1fr;
+    }
+
+    .resumo-km li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .valor-total {
+        font-size: 1.8em;
+    }
+}
+
+/* Estilos para Especificações Detalhadas no Modal */
+.detalhes-especificacoes-modal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.detalhes-especificacoes-modal li {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 0.95em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.detalhes-especificacoes-modal li:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.detalhes-especificacoes-modal li strong {
+    color: #dc3545;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.detalhes-especificacoes-modal li span {
+    text-align: right;
+    flex-grow: 1;
+}
+
+/* Responsividade */
+@media (max-width: 1366px) {
+    .container-modelos {
+        max-width: 700px;
+        padding: 5px;
+    }
+
+    .lista-carros {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .cartao-carro {
+        border-radius: 6px;
+    }
+
+    .carro-flex {
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .imagem-carro {
+        width: 45px;
+        height: 33px;
+        border-radius: 3px;
+    }
+
+    .nome-carro {
+        font-size: 0.8em;
+    }
+
+    .tipo-carro {
+        font-size: 0.65em;
+    }
+
+    .especificacoes {
+        gap: 1px;
+        margin-top: 3px;
+    }
+
+    .especificacao-item {
+        font-size: 0.9em;
+        gap: 1px;
+    }
+
+    .especificacao-item .icone {
+        font-size: 0.9em;
+    }
+
+    .especificacao-texto {
+        font-size: 0.9em;
+        white-space: nowrap;
+    }
+
+    .preco-selecionar {
+        padding: 6px;
+        gap: 5px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    .preco-total {
+        font-size: 0.9em;
+    }
+
+    .texto-total {
+        font-size: 0.45em;
+    }
+
+    .botao-selecionar {
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-size: 0.6em;
+    }
+
+    .modal-conteudo {
+        max-width: 400px;
+    }
+}

@@ -1,0 +1,391 @@
+:root {
+    --cor-branco-cinza: #f9f8f6;
+    --cor-vermelho-forte: #b30000;
+    --cor-preto-forte: #000;
+    --cor-amarelo-forte: #f4b400;
+    --cor-cromio: #D1D0CC;
+}
+
+
+/* Desktops grandes e telas 4k (2560px e acima) */
+@media (min-width: 2560px) {
+    .main {
+        max-width: 2000px;
+        margin: 0 auto;
+    }
+
+    .title {
+        font-size: 80px;
+    }
+
+    .subtitle {
+        font-size: 50px;
+    }
+
+    .description {
+        font-size: 30px;
+        max-width: 800px;
+    }
+
+    .mostruario-carro {
+        padding: 0 40px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        padding: 40px;
+    }
+}
+
+/* Desktops e notebooks grandes (1920px) */
+@media (max-width: 1920px) {
+    .title {
+        font-size: 70px;
+    }
+
+    .subtitle {
+        font-size: 45px;
+    }
+
+    .description {
+        font-size: 28px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Notebooks e monitores menores (1366px - 1440px) */
+@media (max-width: 1440px) {
+    .title {
+        font-size: 60px;
+    }
+
+    .subtitle {
+        font-size: 35px;
+    }
+
+    .description {
+        font-size: 22px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .mostruario-carro {
+        padding: 0 30px;
+    }
+}
+
+/* Monitores de 15 polegadas (1366px) */
+@media (max-width: 1366px) {
+    .main {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+
+    .subtitle {
+        font-size: 30px;
+    }
+
+    .description {
+        font-size: 20px;
+        max-width: 600px;
+    }
+
+    .mostruario-carro {
+        padding: 0 20px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .mostruario-esquerda {
+        padding: 40px 20px;
+    }
+
+    .mostruario-esquerda h1 {
+        font-size: 2em;
+    }
+
+    .mostruario-esquerda p {
+        font-size: 0.9em;
+    }
+}
+
+/* Tablets grandes e notebooks pequenos (1024px - 1365px) */
+@media (max-width: 1365px) {
+    .main {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 45px;
+    }
+
+    .subtitle {
+        font-size: 28px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+
+    .mostruario-carro {
+        padding: 0 20px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
+/* Tablets e dispositivos móveis (1023px e menor) */
+@media (max-width: 1023px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .main {
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* Hero Section */
+    .left {
+        background-image: url("../../imagem/ChatGPT Image 15 de mai. de 2025, 10_57_34.png");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        min-height: 100vh;
+        padding: 60px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+        isolation: isolate;
+        margin-bottom: 60px;
+    }
+
+    .left::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+        z-index: -1;
+    }
+
+    .title {
+        font-size: 48px;
+        color: var(--cor-branco-cinza);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin-bottom: 25px;
+    }
+
+    .subtitle {
+        font-size: 32px;
+        color: var(--cor-branco-cinza);
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+    }
+
+    .description {
+        font-size: 22px;
+        color: var(--cor-branco-cinza);
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        max-width: 100%;
+        margin-bottom: 35px;
+        line-height: 1.4;
+    }
+
+    .right {
+        display: none;
+    }
+
+    /* Mostruário Section */
+    .mostruario-carro {
+        min-height: 100vh;
+        margin: 60px 0;
+        padding: 60px 20px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .mostruario-esquerda {
+        height: 50vh;
+        padding: 40px 20px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .mostruario-esquerda h1 {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+    }
+
+    .mostruario-direita {
+        height: 50vh;
+        width: 100%;
+        padding: 0;
+    }
+
+    .mostruario-carro-imagem {
+        max-height: 90%;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        margin-top: -40px;
+    }
+
+    /* Sugestões Section */
+    .section-Sugestoes {
+        min-height: 100vh;
+        margin-top: 60px;
+        margin-bottom: 120px;
+        padding: 60px 20px 80px;
+        position: relative;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 0 60px;
+        width: 100%;
+        margin-bottom: 60px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 500px;
+    }
+}
+
+/* iPhone 6, 7, 8 e dispositivos similares (375px) */
+@media (max-width: 375px) {
+    .title {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+
+    .subtitle {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        font-size: 16px;
+        margin-bottom: 25px;
+        line-height: 1.5;
+    }
+
+    .mostruario-carro {
+        margin: 25px 0;
+        padding: 25px 15px 35px;
+    }
+
+    .mostruario-esquerda {
+        padding: 25px 15px;
+    }
+
+    .mostruario-esquerda h1 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .mostruario-direita {
+        height: 45vh;
+    }
+
+    .mostruario-carro-imagem {
+        max-height: 85%;
+        margin-top: -30px;
+    }
+
+    .section-Sugestoes {
+        margin-top: 25px;
+        margin-bottom: 70px;
+        padding: 25px 15px 35px;
+    }
+
+    .cards {
+        gap: 20px;
+        padding: 15px 0 25px;
+        margin-bottom: 25px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 0.85em;
+    }
+}
+
+/* Celulares muito pequenos (320px - Galaxy Fold e similares) */
+@media (max-width: 320px) {
+    .title {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .mostruario-carro {
+        margin: 20px 0;
+        padding: 20px 10px 30px;
+    }
+
+    .mostruario-esquerda h1 {
+        font-size: 1.4em;
+    }
+
+    .section-Sugestoes {
+        margin-top: 20px;
+        margin-bottom: 60px;
+        padding: 20px 10px 30px;
+    }
+
+    .cards {
+        gap: 15px;
+        padding: 10px 0 20px;
+    }
+
+    .btn {
+        padding: 8px 14px;
+        font-size: 0.8em;
+    }
+}
+
+/* Footer spacing fix for all screen sizes */
+footer {
+    position: relative;
+    margin-top: 80px;
+    padding-top: 40px;
+}

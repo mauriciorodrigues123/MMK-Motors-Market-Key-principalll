@@ -1,0 +1,473 @@
+/* Estilos gerais da página */
+.pagina-pagamento {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    /* Espaço para o header fixo */
+}
+
+.container-principal {
+    flex: 1;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+}
+
+.container-pagamento {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.container-pagamento h1.titulo {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Resumo da Locação */
+.resumo-pagamento {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.resumo-pagamento h2 {
+    font-size: 1.8em;
+    color: #dc3545;
+    /* Cor vermelha para os títulos */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.detalhes-resumo p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detalhes-resumo p strong {
+    color: #333;
+}
+
+/* Métodos de Pagamento */
+.metodos-pagamento {
+    margin-bottom: 30px;
+}
+
+.metodos-pagamento h2 {
+    font-size: 1.8em;
+    color: #dc3545;
+    /* Cor vermelha para os títulos */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.opcoes-metodo {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.opcoes-metodo .botao-metodo {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #dc3545;
+    /* Borda vermelha */
+    border-radius: 8px;
+    background-color: white;
+    color: #dc3545;
+    /* Cor do texto vermelha */
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.opcoes-metodo .botao-metodo:hover {
+    background-color: #f7e6e6;
+    /* Cor de fundo no hover para botões não ativos */
+}
+
+.botao-metodo.ativo {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.opcoes-metodo .botao-metodo.ativo {
+    background-color: #dc3545;
+    /* Vermelho */
+    color: white;
+    border-color: #dc3545;
+}
+
+.opcoes-metodo .botao-metodo.ativo:hover {
+    background-color: #c02a3a;
+    /* Vermelho mais escuro no hover */
+    border-color: #c02a3a;
+}
+
+/* Seções de Pagamento (Pix, Cartão) */
+.secao-pagamento {
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.secao-pagamento h2 {
+    font-size: 1.8em;
+    color: #dc3545;
+    /* Cor vermelha para os títulos */
+    margin-bottom: 25px;
+}
+
+/* Estilos Pix */
+.pix-secao .chave-pix {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.pix-secao .instrucao-pix {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Estilos Cartão */
+.cartao-secao .campo-formulario {
+    margin-bottom: 25px;
+}
+
+.cartao-secao .campo-formulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.cartao-secao .campo-formulario input,
+.cartao-secao .campo-formulario select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.cartao-secao .campo-formulario input:focus,
+.cartao-secao .campo-formulario select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.campo-grupo-inline {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.campo-grupo-inline .campo-formulario {
+    flex: 1;
+    margin-bottom: 0;
+    /* Remover margin-bottom redundante aqui */
+}
+
+/* Botão de Confirmação (geral para as seções) */
+.botao-confirmar {
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botao-confirmar:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Aguardando Seleção (estado inicial) */
+.confirmacao-pagamento {
+    text-align: center;
+    padding: 30px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-top: 30px;
+    /* Para alinhar com as outras seções de pagamento */
+}
+
+.confirmacao-pagamento h2 {
+    font-size: 1.8em;
+    color: #dc3545;
+    /* Cor vermelha para os títulos */
+    margin-bottom: 25px;
+}
+
+.confirmacao-pagamento p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .pagina-pagamento {
+        padding-top: 80px;
+    }
+
+    .container-principal {
+        padding: 20px 15px;
+    }
+
+    .container-pagamento {
+        padding: 20px;
+    }
+
+    .titulo {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .resumo-pagamento h2,
+    .metodos-pagamento h2,
+    .secao-pagamento h2,
+    .confirmacao-pagamento h2 {
+        font-size: 1.3em;
+    }
+
+    .detalhes-resumo p,
+    .confirmacao-pagamento p,
+    .pix-secao .chave-pix,
+    .pix-secao .instrucao-pix,
+    .cartao-secao .campo-formulario label,
+    .cartao-secao .campo-formulario input {
+        font-size: 1em;
+    }
+
+    .opcoes-metodo {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .botao-metodo {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .botao-confirmar {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagina-pagamento {
+        padding-top: 70px;
+    }
+
+    .container-pagamento {
+        margin: 0 10px;
+    }
+
+    .titulo {
+        font-size: 1.5em;
+    }
+
+    .resumo-pagamento h2,
+    .metodos-pagamento h2,
+    .secao-pagamento h2,
+    .confirmacao-pagamento h2 {
+        font-size: 1.2em;
+    }
+
+    .detalhes-resumo p,
+    .confirmacao-pagamento p,
+    .pix-secao .chave-pix,
+    .pix-secao .instrucao-pix,
+    .cartao-secao .campo-formulario label,
+    .cartao-secao .campo-formulario input {
+        font-size: 0.95em;
+    }
+
+    .botao-metodo {
+        padding: 8px 15px;
+        font-size: 0.95em;
+    }
+
+    .botao-confirmar {
+        padding: 8px 15px;
+        font-size: 0.95em;
+    }
+}
+
+.secao-pagamento.cartao-secao {
+    background-color: #ffffff;
+    /* Fundo branco para a área do formulário */
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Garante que o border-radius se aplique aos filhos */
+    max-width: 450px;
+    /* Limite a largura para parecer um cartão */
+    margin: 30px auto;
+    /* Centraliza o cartão */
+    padding: 0;
+    /* Remover padding aqui, será nos filhos */
+}
+
+.card-header {
+    background-color: #dc3545;
+    /* Vermelho */
+    color: white;
+    padding: 25px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    /* Para posicionar ícones ou logos */
+}
+
+.card-header .card-number-display {
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.card-header .card-details-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.card-header .card-name-display {
+    text-transform: uppercase;
+}
+
+.card-header .card-expiry-display {
+    text-transform: uppercase;
+}
+
+.card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo-grupo-inline {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 0;
+    /* Removido para usar gap no card-body */
+}
+
+.campo-grupo-inline .campo-formulario {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.campo-formulario {
+    margin-bottom: 20px;
+    /* Adicionar margin-bottom novamente para campos individuais */
+}
+
+.campo-formulario:last-of-type {
+    margin-bottom: 0;
+    /* Remover margin-bottom do último campo antes dos botões */
+}
+
+.botoes-cartao {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    /* Linha divisória */
+    margin-top: auto;
+    /* Empurra para o final do card-body */
+}
+
+.botao-cancelar,
+.botao-pagar {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    min-width: 120px;
+}
+
+.botao-cancelar {
+    background-color: #e0e0e0;
+    /* Cinza claro */
+    color: #555;
+}
+
+.botao-cancelar:hover {
+    background-color: #d0d0d0;
+    transform: translateY(-2px);
+}
+
+.botao-pagar {
+    background-color: #28a745;
+    /* Verde */
+    color: white;
+}
+
+.botao-pagar:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .secao-pagamento.cartao-secao {
+        margin: 20px;
+        max-width: 90%;
+    }
+
+    .card-header,
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-header .card-number-display {
+        font-size: 1.5em;
+    }
+
+    .botoes-cartao {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .botao-cancelar,
+    .botao-pagar {
+        width: 100%;
+    }
+}

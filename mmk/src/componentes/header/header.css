@@ -1,0 +1,203 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Header sempre visível na página de carros e sobre */
+.pagina-modelos .header,
+.sobre-page .header {
+  background-color: #fafafa !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Links pretos na página de carros e sobre */
+.pagina-modelos .nav a,
+.pagina-modelos .hamburger,
+.sobre-page .nav a,
+.sobre-page .hamburger {
+  color: var(--cor-preto-forte) !important;
+}
+
+/* Logo preta na página de carros e sobre */
+.pagina-modelos .logo,
+.sobre-page .logo {
+  color: var(--cor-preto-forte) !important;
+}
+
+/* Comportamento de scroll apenas para outras páginas (não afeta página de carros) */
+.header:not(.pagina-modelos .header).scrolled {
+  background-color: var(--cor-branco-cinza);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header:not(.pagina-modelos .header).scrolled .nav a {
+  color: var(--cor-preto-forte);
+}
+
+.header:not(.pagina-modelos .header).scrolled .hamburger {
+  color: var(--cor-preto-forte);
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: white;
+}
+
+.logo-mmk {
+  height: 60px;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  color: var(--cor-branco-cinza);
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+    background-color: #fafafa !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-right {
+    gap: 10px;
+  }
+
+  .logo {
+    color: var(--cor-preto-forte) !important;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    font-size: 2em;
+    color: var(--cor-preto-forte);
+    width: 40px;
+    height: 40px;
+    order: 2;
+  }
+
+  /* Menu de navegação mobile */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--cor-preto-forte);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease;
+    z-index: 1000;
+  }
+
+  .nav.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Links no menu mobile - máxima especificidade */
+  .header .nav a,
+  .header .nav a:link,
+  .header .nav a:visited,
+  .header .nav.active a,
+  .header .nav.active a:link,
+  .header .nav.active a:visited,
+  .pagina-modelos .header .nav a,
+  .sobre-page .header .nav a,
+  .add-carros .header .nav a,
+  [class*="page"] .header .nav a {
+    color: white !important;
+    font-size: 1.5em;
+    padding: 10px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Hover dos links no menu mobile */
+  .header .nav a:hover,
+  .header .nav.active a:hover,
+  .pagina-modelos .header .nav a:hover,
+  .sobre-page .header .nav a:hover,
+  .add-carros .header .nav a:hover,
+  [class*="page"] .header .nav a:hover {
+    color: var(--cor-vermelho-forte) !important;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+
+  .hamburger:hover {
+    background-color: transparent;
+  }
+
+  .hamburger::before {
+    content: "☰";
+  }
+
+  .hamburger.active {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    border-radius: 50%;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-vermelho-forte);
+  }
+
+  .hamburger.active::before {
+    content: "×";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+}
+
+.pagina-modelos .nav a {
+  color: var(--cor-branco-cinza);
+}

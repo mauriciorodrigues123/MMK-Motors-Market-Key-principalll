@@ -1,0 +1,169 @@
+.containerLogin {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--cor-branco-cinza);
+}
+
+.cartaoLogin {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.tituloLogin {
+    color: var(--cor-preto-forte);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.mensagemErro {
+    background-color: #fff3f3;
+    color: var(--cor-vermelho-forte);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #ffcdd2;
+}
+
+.formularioLogin {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campoFormulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campoFormulario label {
+    color: var(--cor-preto-forte);
+    font-weight: 500;
+}
+
+.campoFormulario input,
+.campoFormulario select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.campoFormulario input:focus,
+.campoFormulario select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.campoFormulario input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.botaoEntrar {
+    background-color: var(--cor-vermelho-forte);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botaoEntrar:hover:not(:disabled) {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+}
+
+.botaoEntrar:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.textoRegistro {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.linkCadastro {
+    color: var(--cor-vermelho-forte);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.linkCadastro:hover {
+    color: #cc0000;
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .cartaoLogin {
+        padding: 30px 20px;
+    }
+
+    .tituloLogin {
+        font-size: 1.8em;
+    }
+}
+
+.campo-senha-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo-senha-container:focus-within {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.campo-senha-container input {
+    flex-grow: 1;
+    border: none;
+    padding: 12px;
+    padding-right: 40px;
+    background-color: transparent;
+    outline: none;
+}
+
+.botao-mostrar-senha {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 1.1em;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.botao-mostrar-senha:hover {
+    color: #333;
+}

@@ -1,0 +1,166 @@
+.icone-usuario-container {
+    position: relative;
+}
+
+.botao-usuario {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.botao-usuario:hover {
+    transform: scale(1.1);
+}
+
+.avatar-usuario {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.avatar-usuario:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-usuario {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    min-width: 220px;
+    z-index: 1000;
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-usuario {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.nome-usuario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.email-usuario {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-left: 24px;
+}
+
+.icone-menu {
+    font-size: 1.1em;
+    color: #666;
+}
+
+.botao-menu {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.botao-menu:hover {
+    background-color: #e9ecef;
+    border-color: #007bff;
+    color: #007bff;
+    transform: translateX(5px);
+}
+
+.botao-menu:hover .icone-menu {
+    color: #007bff;
+}
+
+.botao-logout {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.botao-logout:hover {
+    background-color: #c82333;
+    transform: translateX(5px);
+}
+
+.botao-logout:hover .icone-menu {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .menu-usuario {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        border-radius: 16px 16px 0 0;
+        padding: 20px;
+        animation: slideUp 0.2s ease;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .botao-menu:hover,
+    .botao-logout:hover {
+        transform: none;
+    }
+}
