@@ -127,6 +127,9 @@ export function AdicionarCarro() {
         };
 
         try {
+            console.log('Enviando requisição para:', `${API_URL}/carros`);
+            console.log('Dados do carro:', novoCarro);
+
             const response = await fetch(`${API_URL}/carros`, {
                 method: 'POST',
                 headers: {
@@ -136,12 +139,16 @@ export function AdicionarCarro() {
             });
 
             if (!response.ok) {
-                throw new Error('Erro ao adicionar carro');
+                const errorData = await response.json();
+                throw new Error(errorData.mensagem || 'Erro ao adicionar carro');
             }
 
             const carroAdicionado = await response.json();
+            console.log('Carro adicionado com sucesso:', carroAdicionado);
+
             setCarros([...carros, carroAdicionado]);
 
+            // Limpa o formulário
             setNome('');
             setTipo('');
             setPrecoTotal('');
@@ -153,10 +160,11 @@ export function AdicionarCarro() {
             setPortas('');
             setConsumoKmPorLitro('');
 
-            navigate('/carros'); // Redireciona para a página de carros
+            alert('Carro adicionado com sucesso!');
+            navigate('/carros');
         } catch (error) {
-            console.error('Erro ao adicionar carro:', error);
-            alert('Erro ao adicionar carro.');
+            console.error('Erro detalhado ao adicionar carro:', error);
+            alert(`Erro ao adicionar carro: ${error instanceof Error ? error.message : 'Erro desconhecido'}`);
         }
     };
 
