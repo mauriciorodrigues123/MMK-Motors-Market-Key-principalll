@@ -96,10 +96,10 @@ Projeto acadêmico desenvolvido com:
 *   **Acesse o desenvolvimento do Projeto:** [Link desenvolvimento do Projeto](https://1drv.ms/w/c/81c88c41ddf1fb22/EdkbPPW28OxAt-qc_52GpHgB9n2ppWfPGo9geZTB5GNxaw?e=kbfEbD)
 *   **Pitch do MMK Motors Market Key:** [Link para o Pitch](https://youtu.be/5_--5iO8hWU?si=SLeKhk_JBClHqNwC)
 
-## Participantes:
+## Participantes
 
-Maurício Rodrigues bispo 
-Kauê Miguel Oliveira Silva
-Maycon Douglas Cardoso da Silva 
-Vinícius Júlio Saladini
-Matheus Marques dos Santos
+*   Kauê Miguel Oliveira Silva
+*   Matheus Marques dos Santos
+*   Maurício Rodrigues bispo
+*   Maycon Douglas Cardoso da Silva
+*   Vinícius Júlio Saladini
