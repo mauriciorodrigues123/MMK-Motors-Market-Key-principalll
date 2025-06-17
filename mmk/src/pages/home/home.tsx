@@ -20,7 +20,9 @@ export function Home() {
 
                     <p className="description">Do código à estrada: seu carro, nossa missão.</p>
                     <nav>
-                        <a href="#" className="btn">Saiba mais</a>
+                        <Link to={"sobre"}>
+                         <a href="#" className="btn">Saiba mais</a>
+                        </Link>
                     </nav>
                 </section>
 
